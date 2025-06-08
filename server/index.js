@@ -18,10 +18,15 @@ import User from "./models/User.js";
 import Post from "./models/Post.js";
 import { users, posts } from "./data/index.js";
 
+
 /* CONFIGURATIONS */
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config();
+
+console.log("MONGO_URL from env:", process.env.MONGO_URL);
+
+
 const app = express();
 app.use(express.json());
 app.use(helmet());
@@ -42,6 +47,11 @@ const storage = multer.diskStorage({
   },
 });
 const upload = multer({ storage });
+
+// app.get("/", (req, res) => {
+//   res.send("API is running");
+// });
+
 
 /* ROUTES WITH FILES */
 app.post("/auth/register", upload.single("picture"), register);
