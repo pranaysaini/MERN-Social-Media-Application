@@ -48,9 +48,9 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// app.get("/", (req, res) => {
-//   res.send("API is running");
-// });
+app.get("/", (req, res) => {
+  res.send("API is running");
+});
 
 
 /* ROUTES WITH FILES */
