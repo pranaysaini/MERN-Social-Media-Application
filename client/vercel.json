@@ -1,5 +1,8 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+    {
+      "source": "/api/:path*",
+      "destination": "https://mern-social-backend-v6np.onrender.com/:path*"
+    }
   ]
 }
