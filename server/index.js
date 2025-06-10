@@ -34,7 +34,12 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors());
+
+app.use(cors({
+  origin: "https://mern-social-media-application-bzt3.vercel.app/", 
+  credentials: true 
+}));
+
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 /* FILE STORAGE */
