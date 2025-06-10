@@ -60,6 +60,7 @@ app.get("/", (req, res) => {
 
 /* ROUTES WITH FILES */
 app.post("/auth/register", upload.single("picture"), register);
+
 app.post("/posts", verifyToken, upload.single("picture"), createPost);
 
 /* ROUTES */
