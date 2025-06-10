@@ -23,13 +23,9 @@ const registerSchema = yup.object().shape({
   password: yup.string().required("required"),
   location: yup.string().required("required"),
   occupation: yup.string().required("required"),
-  // picture: yup.string().required("required"),
-  picture: yup
-  .mixed()
-  .required("required")
-  .test("fileType", "Unsupported File Format", (value) => {
-    return value && ["image/jpeg", "image/png", "image/jpg"].includes(value.type);
-  })
+  picture: yup.string().required("required"),
+  
+ 
 });
 
 const loginSchema = yup.object().shape({
